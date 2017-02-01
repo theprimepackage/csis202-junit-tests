@@ -61,6 +61,18 @@ Here are some links to helpful websites about JUnit Testing.
 # Style Guide
 We want to be uniform (cookie cutter) in formating our Unit Tests. Thus, please follow the rules outlined in this section.
 
-- When 
+
+```java
+class CarTest {
+
+    @Test
+    void instantiatesWithFullTank() // Make sure method names are very desciptive don't be afraid to make them long
+    {
+        Car car = new Car(20, 50, 3000); // Let us instantiate a new object per test, that way we ensure the tests don't interfere
+        Assertions.assertEquals(50, car.getGasInTank()); //One Assertion per test. That way we can easliy tell what broke.
+    }
+    
+}
+```
 
 
