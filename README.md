@@ -24,7 +24,7 @@ If you do not do this and someone else comes onto the repo and makes changes to 
 files will not match and will result in a merge conflict. To avoid this please follow the steps outlined below (See **Basic Usage**).
 
 ## Basic Usage
-- You have just sat down and are ready to code some unit tests so you open Intellij and start to writing some&mdash;**STOP!!** Forver stop this. **Never ever do this!** The first thing that you do before writing *any* code is to run:
+- You have just sat down and are ready to code some unit tests so you open Intellij and start to writing some&mdash;**STOP!!** Forever stop this. **Never ever do this!** The first thing that you do before writing *any* code is to run:
 ```
 git pull
 ```
