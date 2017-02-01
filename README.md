@@ -18,6 +18,16 @@ Once you have a folder for the unit test repo, for instance "CSIS202-JUnit-tests
 - `git config --global user.name "[Your Name]"`
 - `git config --global user.email "[Your email]@georgefox.edu"`
 
+## Installing Git
+- To intall git first download it from [here][3].
+- Then run it. In the installation window after the GNU General Public License page, make sure that unser Windows Explorer integration that "Git Bash Here" is checked. 
+- Click Next. Then choose whether to run it from Git Bash (Basically a terminal window like in linux) only or from the Windows Command Prompt as well. I personal like to have both options. 
+- Click Next. You can read this section about line endings but I just move along. 
+- Click Next. Yes use MinTTy&mdash;its a pretty terminal emulator.
+- Click Next.
+- Click Next. Install the difftool if you want. It is use to compate the differences between two files (I believe) I haven't used it before
+- Click Install. Finally...
+
 ## Important note about using git
 When editing a file in the repo, **make sure that you always push changes when done editing the file!!!**
 If you do not do this and someone else comes onto the repo and makes changes to the same file, when you go to push your changes the 
@@ -38,18 +48,19 @@ Note: the `-a` flag is to add all changes to be staged for commiting.
 - That is basically it. If you would like a really simple yet informative overview, or if you are **unsure about anything**, please refer to this lovely [git guide][4]
 - Branching is very useful so definitely learn up on that.
 
-## Installing Git
-- To intall git first download it from [here][3].
-- Then run it. In the installation window after the GNU General Public License page, make sure that unser Windows Explorer integration that "Git Bash Here" is checked. 
-- Click Next. Then choose whether to run it from Git Bash (Basically a terminal window like in linux) only or from the Windows Command Prompt as well. I personal like to have both options. 
-- Click Next. You can read this section about line endings but I just move along. 
-- Click Next. Yes use MinTTy&mdash;its a pretty terminal emulator.
-- Click Next.
-- Click Next. Install the difftool if you want. It is use to compate the differences between two files (I believe) I haven't used it before
-- Click Install. Finally...
-
+## JUnit Testing
+Here are some links to helpful websites about JUnit Testing.
+- One of my favorite refferences for JUnit testing. I go here often: http://www.vogella.com/tutorials/JUnit/article.html
+- A *very* brief overview of some of Hamcrest's capabilites: https://github.com/junit-team/junit4/wiki/Matchers-and-assertthat
 
 [1]: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/hamcrest/hamcrest-1.3.zip
 [2]: http://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project/#answer-32853178
 [3]: http://git-scm.com/download/win
 [4]: http://rogerdudler.github.io/git-guide/
+
+# Style Guide
+We want to be uniform (cookie cutter) in formating our Unit Tests. Thus, please follow the rules outlined in this section.
+
+- When 
+
+
