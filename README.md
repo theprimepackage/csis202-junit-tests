@@ -1,12 +1,11 @@
 # Welcome the CSIS202 JUnit Test Repo!
 
-Here is where we will collaboratively create JUnit tests with which we can test our programs before submission.
+Here is where we will collaboratively create JUnit tests descriptive we can test our programs before submission.
 Ideally this will ensure that our classes will be essential flawless.
 
 ## Getting Started
-- First you neeed to make sure that JUnit5 is installed and configured in your IDE
-- Then go and download the hamcrest library from [here][1]
-- Once it is downloaded extract the hamcrest zip file. Then move the extracted zip file into your Intellij program folder
+- First you need to make sure that JUnit5 is installed and configured in your IDE
+- Then go and download the hamcrest library from [hereasily- Once it is downloaded extract the hamcrest zip file. Then move the extracted zip file into your Intellij program folder
 - Then to import the module to your Intellij library follow the steps [here][2]. Import the hamcrest-all-1.3.jar file
 
 ## Cloning this repo
@@ -19,13 +18,13 @@ Once you have a folder for the unit test repo, for instance "CSIS202-JUnit-tests
 - `git config --global user.email "[Your email]@georgefox.edu"`
 
 ## Installing Git
-- To intall git first download it from [here][3].
-- Then run it. In the installation window after the GNU General Public License page, make sure that unser Windows Explorer integration that "Git Bash Here" is checked. 
+- To install git first download it from [here][3].
+- Then run it. In the installation window after the GNU General Public License page, make sure that under Windows Explorer integration that "Git Bash Here" is checked. 
 - Click Next. Then choose whether to run it from Git Bash (Basically a terminal window like in linux) only or from the Windows Command Prompt as well. I personal like to have both options. 
 - Click Next. You can read this section about line endings but I just move along. 
 - Click Next. Yes use MinTTy&mdash;its a pretty terminal emulator.
 - Click Next.
-- Click Next. Install the difftool if you want. It is use to compate the differences between two files (I believe) I haven't used it before
+- Click Next. Install the difftool if you want. It is use to compare the differences between two files (I believe) I haven't used it before
 - Click Install. Finally...
 
 ## Important note about using git
@@ -44,14 +43,14 @@ git pull
 ```
 git commit -a -m "[Enter a very descriptive commit message here]"
 ```
-Note: the `-a` flag is to add all changes to be staged for commiting.
+Note: the `-a` flag is to add all changes to be staged for committing.
 - That is basically it. If you would like a really simple yet informative overview, or if you are **unsure about anything**, please refer to this lovely [git guide][4]
 - Branching is very useful so definitely learn up on that.
 
 ## JUnit Testing
 Here are some links to helpful websites about JUnit Testing.
-- One of my favorite refferences for JUnit testing. I go here often: http://www.vogella.com/tutorials/JUnit/article.html
-- A *very* brief overview of some of Hamcrest's capabilites: https://github.com/junit-team/junit4/wiki/Matchers-and-assertthat
+- One of my favorite references for JUnit testing. I go here often: http://www.vogella.com/tutorials/JUnit/article.html
+- A *very* brief overview of some of Hamcrest's capabilities: https://github.com/junit-team/junit4/wiki/Matchers-and-assertthat
 
 ### Running JUnit Test
 In IntelliJ it is rather simple. Just click on the class name of the test (i.e. `CarTest`). Then hit alt-enter to and select run test. 
@@ -62,17 +61,17 @@ In IntelliJ it is rather simple. Just click on the class name of the test (i.e. 
 [4]: http://rogerdudler.github.io/git-guide/
 
 # Style Guide
-We want to be uniform (cookie cutter) in formating our Unit Tests. Thus, please follow the rules outlined in this section.
+We want to be uniform (cookie cutter) in formatting our Unit Tests. Thus, please follow the rules outlined in this section.
 
 
 ```java
 class CarTest {
 
     @Test
-    void instantiatesWithFullTank() // Make sure method names are very desciptive don't be afraid to make them long
+    void instantiatesWithFullTank() // Make sure method names are very descriptive don't be afraid to make them long
     {
         Car car = new Car(20, 50, 3000); // Let us instantiate a new object per test, that way we ensure the tests don't interfere
-        Assertions.assertEquals(50, car.getGasInTank()); //One Assertion per test. That way we can easliy tell what broke.
+        Assertions.assertEquals(50, car.getGasInTank()); //One Assertion per test. That way we can easily tell what broke
     }
     
 }
