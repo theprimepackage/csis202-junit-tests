@@ -51,6 +51,7 @@ Note: the `-a` flag is to add all changes to be staged for committing.
 Here are some links to helpful websites about JUnit Testing.
 - One of my favorite references for JUnit testing. I go here often: http://www.vogella.com/tutorials/JUnit/article.html
 - A *very* brief overview of some of Hamcrest's capabilities: https://github.com/junit-team/junit4/wiki/Matchers-and-assertthat
+- Yesss Vogella tutorial on Hamcrest!! I love vogella&mdash;http://www.vogella.com/tutorials/Hamcrest/article.html
 
 ### Running JUnit Test
 In IntelliJ it is rather simple. Just click on the class name of the test (i.e. `CarTest`). Then hit alt-enter to and select run test. 
@@ -63,6 +64,7 @@ In IntelliJ it is rather simple. Just click on the class name of the test (i.e. 
 # Style Guide
 We want to be uniform (cookie cutter) in formatting our Unit Tests. Thus, please follow the rules outlined in this section.
 
+- NOTE: **Please comment!!** Some tests need explanation. They don't have to be javadoc just simple comments. Thanks!!
 
 ```java
 class CarTest {
