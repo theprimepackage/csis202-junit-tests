@@ -5,7 +5,7 @@ Ideally this will ensure that our classes will be essential flawless.
 
 ## Getting Started
 - First you need to make sure that JUnit5 is installed and configured in your IDE
-- Then go and download the hamcrest library from [here][1] easily- Once it is downloaded extract the hamcrest zip file. Then move the extracted zip file into your Intellij program folder
+- Then go and download the hamcrest library from [here][1] easily. Once it is downloaded extract the hamcrest zip file. Then move the extracted zip file into your Intellij program folder
 - Then to import the module to your Intellij library follow the steps [here][2]. Import the hamcrest-all-1.3.jar file
 
 ## Cloning this repo
