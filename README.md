@@ -34,7 +34,7 @@ If you do not do this and someone else comes onto the repo and makes changes to 
 files will not match and will result in a merge conflict. To avoid this please follow the steps outlined below (See **Basic Usage**).
 
 ## Basic Usage
-- You have just sat down and are ready to code some unit tests so you open Intellij and start to writing some&mdash;**STOP!!** Forever stop this. **Never ever do this!** The first thing that you do before writing *any* code is to run:
+- You have just sat down and are ready to code some unit tests so you open IntelliJ and start to writing some&mdash;**STOP!!** Forever stop this. **Never ever do this!** The first thing that you do before writing *any* code is to run:
 ```
 git pull
 ```
@@ -52,6 +52,9 @@ Note: the `-a` flag is to add all changes to be staged for commiting.
 Here are some links to helpful websites about JUnit Testing.
 - One of my favorite refferences for JUnit testing. I go here often: http://www.vogella.com/tutorials/JUnit/article.html
 - A *very* brief overview of some of Hamcrest's capabilites: https://github.com/junit-team/junit4/wiki/Matchers-and-assertthat
+
+### Running JUnit Test
+In IntelliJ it is rather simple. Just click on the class name of the test (i.e. `CarTest`). Then hit alt-enter to and select run test. 
 
 [1]: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/hamcrest/hamcrest-1.3.zip
 [2]: http://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project/#answer-32853178
