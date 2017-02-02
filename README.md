@@ -3,9 +3,11 @@
 Here is where we will collaboratively create JUnit tests that way we can test our programs before submission.
 Ideally this will ensure that our classes will be essential flawless.
 
+Note: I highly recommend using [IntelliJ IDEA][5]. Most converts sing of its praises. It has a beautiful and very intuitive interface.
+
 ## Getting Started
 - First you need to make sure that JUnit5 is installed and configured in your IDE
-- Then go and download the hamcrest library from [here][1] easily. Once it is downloaded extract the hamcrest zip file. Then move the extracted zip file into your Intellij program folder
+- Then go and download the hamcrest library from [here][1] easily. Once it is downloaded extract the hamcrest zip file. Then move the extracted zip file into your Intellij program folder (or any other folder for that matter, the IDE will just need to know where it is. I recommend removing it from the downloads folder at the very least.)
 - Then to import the module to your Intellij library follow the steps [here][2]. Import the hamcrest-all-1.3.jar file
 
 ## Cloning this repo
@@ -60,7 +62,7 @@ In IntelliJ it is rather simple. Just click on the class name of the test (i.e. 
 [2]: http://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project/#answer-32853178
 [3]: http://git-scm.com/download/win
 [4]: http://rogerdudler.github.io/git-guide/
-
+[5]: https://www.jetbrains.com/idea/download/#section=windows
 # Style Guide
 We want to be uniform (cookie cutter) in formatting our Unit Tests. Thus, please follow the rules outlined in this section.
 
