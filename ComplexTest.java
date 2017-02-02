@@ -2,6 +2,7 @@ package CSIS202JunitTests;
 
 import com.foba.CSIS202.Complex;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -31,19 +32,19 @@ class ComplexTest {
     final double IMAGINARY_PART_RAND_VALUE = random.nextDouble();
 
 
-    //***Check that the instance variables are correct***//
+    //***Check that the class has the specified properties***//
     @Test
     void complexObjectHasRealPartProperty()
     {
         Complex complex = new Complex(REAL_PART_VALUE, IMAGINARY_PART_VALUE);
-        assertThat(complex, hasProperty("initialReal"));
+        assertThat(complex, hasProperty("realPart"));
     }
 
     @Test
     void complexObjectHasImaginaryPartProperty()
     {
         Complex complex = new Complex(REAL_PART_VALUE, IMAGINARY_PART_VALUE);
-        assertThat(complex, hasProperty("_imaginaryPart"));
+        assertThat(complex, hasProperty("imaginaryPart"));
     }
 
     //***Check that the object instantiates with the correct values***//
@@ -52,14 +53,14 @@ class ComplexTest {
     void complexObjectHasCorrectRealPartValue()
     {
         Complex complex = new Complex(REAL_PART_VALUE, IMAGINARY_PART_VALUE);
-        assertThat(complex, hasProperty("_realPart", equalTo(REAL_PART_VALUE)));
+        assertThat(complex, hasProperty("realPart", equalTo(REAL_PART_VALUE)));
     }
 
     @Test
     void complexObjectHasCorrectImaginaryPartValue()
     {
         Complex complex = new Complex(REAL_PART_VALUE, IMAGINARY_PART_VALUE);
-        assertThat(complex, hasProperty("_realPart", equalTo(IMAGINARY_PART_VALUE)));
+        assertThat(complex, hasProperty("imaginaryPart", equalTo(IMAGINARY_PART_VALUE)));
     }
 
     //Using irrational random values
@@ -67,14 +68,14 @@ class ComplexTest {
     void complexObjectHasCorrectRealPartValueRand()
     {
         Complex complex = new Complex(REAL_PART_RAND_VALUE, IMAGINARY_PART_RAND_VALUE);
-        assertThat(complex, hasProperty("_realPart", closeTo(REAL_PART_RAND_VALUE, EPSILON)));
+        assertThat(complex, hasProperty("realPart", closeTo(REAL_PART_RAND_VALUE, EPSILON)));
     }
 
     @Test
     void complexObjectHasCorrectImaginaryPartValueRand()
     {
         Complex complex = new Complex(REAL_PART_RAND_VALUE, IMAGINARY_PART_RAND_VALUE);
-        assertThat(complex, hasProperty("_realPart", closeTo(IMAGINARY_PART_VALUE, EPSILON)));
+        assertThat(complex, hasProperty("imaginaryPart", closeTo(IMAGINARY_PART_RAND_VALUE, EPSILON)));
     }
 
 
@@ -107,7 +108,7 @@ class ComplexTest {
     void getImaginaryPartReturnsCorrectValueIrrat()
     {
         Complex complex = new Complex(REAL_PART_RAND_VALUE, IMAGINARY_PART_RAND_VALUE);
-        assertThat(complex.getRealPart(), closeTo(IMAGINARY_PART_RAND_VALUE, EPSILON));
+        assertThat(complex.getImaginaryPart(), closeTo(IMAGINARY_PART_RAND_VALUE, EPSILON));
     }
 
 

@@ -50,19 +50,41 @@ Note: the `-a` flag is to add all changes to be staged for committing.
 - Branching is very useful so definitely learn up on that.
 
 ## JUnit Testing
+
+- In IntelliJ it is rather simple.Place your cursor on the name of the test class (i.e. `CarTest`) and then hit alt-enter to and select run test.
+
 Here are some links to helpful websites about JUnit Testing.
 - One of my favorite references for JUnit testing. I go here often: http://www.vogella.com/tutorials/JUnit/article.html
 - A *very* brief overview of some of Hamcrest's capabilities: https://github.com/junit-team/junit4/wiki/Matchers-and-assertthat
 - Yesss Vogella tutorial on Hamcrest!! I love vogella&mdash;http://www.vogella.com/tutorials/Hamcrest/article.html
 
-### Running JUnit Test
-In IntelliJ it is rather simple. Just click on the class name of the test (i.e. `CarTest`). Then hit alt-enter to and select run test. 
+Some Notes on what methods I am using and why&mdash;
+
+- The `hasProperty()` method checks to see if the class has a JavaBean property. This is basically the instance variable coupled with the getter and/or setter. Do not confuse the instance or parameter variables with the property. Please view the example below. For more info refer to the java documentation on [Properties][6].
+
+```java
+public class Car
+{
+    //This class has the property 'mpg'; not '_mpg', or 'MPG', or even 'mPG'
+    
+    private double _mpg;
+    
+    public double getMPG()
+        {
+            return _mpg;
+        }
+    
+}
+```
+
 
 [1]: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/hamcrest/hamcrest-1.3.zip
 [2]: http://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project/#answer-32853178
 [3]: http://git-scm.com/download/win
 [4]: http://rogerdudler.github.io/git-guide/
 [5]: https://www.jetbrains.com/idea/download/#section=windows
+[6]: https://docs.oracle.com/javase/tutorial/javabeans/writing/properties.html
+
 # Style Guide
 We want to be uniform (cookie cutter) in formatting our Unit Tests. Thus, please follow the rules outlined in this section.
 
