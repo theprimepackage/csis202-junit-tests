@@ -1,4 +1,5 @@
 # Welcome the CSIS202 JUnit Test Repo!
+##\*\*Update Please See Note Under [JUnit Testing](#junittesting)** 
 
 Here is where we will collaboratively create JUnit tests that way we can test our programs before submission.
 Ideally this will ensure that our classes will be essential flawless.
@@ -49,8 +50,10 @@ Note: the `-a` flag is to add all changes to be staged for committing.
 - That is basically it. If you would like a really simple yet informative overview, or if you are **unsure about anything**, please refer to this lovely [git guide][4]
 - Branching is very useful so definitely learn up on that.
 
-## JUnit Testing
+## JUnit Testing <a name="junittesting"></a>
+- ** When using the Hamcrest method place the values in this order:
 
+    `assertThat(/*Value being tested*/,/*expected vlaue*/)`
 - In IntelliJ it is rather simple.Place your cursor on the name of the test class (i.e. `CarTest`) and then hit alt-enter to and select run test.
 
 Here are some links to helpful websites about JUnit Testing.
