@@ -216,13 +216,6 @@ class ComplexTest {
         //Multiplication is defined as: (a + bi)(c + di) = (ac - bd) + (bc + ad)i
         double newRealPart = ((REAL_PART_VALUE_1 * REAL_PART_VALUE_2) -  (IMAGINARY_PART_VALUE_1 * IMAGINARY_PART_VALUE_2));
 
-        System.out.println("REAL_PART_VALUE_1 " + REAL_PART_VALUE_1);
-        System.out.println("REAL_PART_VALUE_2 " + REAL_PART_VALUE_2);
-
-        System.out.println("IMAGINARY_PART_VALUE_1 " + IMAGINARY_PART_VALUE_1);
-        System.out.println("IMAGINARY_PART_VALUE_2 " + IMAGINARY_PART_VALUE_2);
-
-
         Complex complex1 = new Complex(REAL_PART_VALUE_1, IMAGINARY_PART_VALUE_1);
         Complex complex2 = new Complex(REAL_PART_VALUE_2, IMAGINARY_PART_VALUE_2);
 
@@ -234,12 +227,11 @@ class ComplexTest {
     @Test
     void multiplyComplexNumbersCorrectImaginaryPartValueRat()
     {
-        double newImaginaryPart = (IMAGINARY_PART_VALUE_1 * REAL_PART_VALUE_2 -  REAL_PART_VALUE_1 * IMAGINARY_PART_VALUE_2);
+        double newImaginaryPart = ((IMAGINARY_PART_VALUE_1 * REAL_PART_VALUE_2) +  (REAL_PART_VALUE_1 * IMAGINARY_PART_VALUE_2));
         Complex complex1 = new Complex(REAL_PART_VALUE_1, IMAGINARY_PART_VALUE_1);
         Complex complex2 = new Complex(REAL_PART_VALUE_2, IMAGINARY_PART_VALUE_2);
 
-        complex1.sub(complex2);
-
+        complex1.multiply(complex2);
         assertThat(complex1.getImaginaryPart(), equalTo(newImaginaryPart));
     }
 
@@ -250,7 +242,7 @@ class ComplexTest {
         Complex complex1 = new Complex(REAL_PART_RAND_VALUE_1, IMAGINARY_PART_RAND_VALUE_1);
         Complex complex2 = new Complex(REAL_PART_RAND_VALUE_2, IMAGINARY_PART_RAND_VALUE_2);
 
-        complex1.sub(complex2);
+        complex1.multiply(complex2);
 
         assertThat(complex1.getRealPart(), closeTo(newRealPart, EPSILON));
     }
@@ -258,11 +250,11 @@ class ComplexTest {
     @Test
     void multiplyComplexNumbersCorrectImaginaryPartValueIrrat()
     {
-        double newImaginaryPart = (IMAGINARY_PART_RAND_VALUE_1 * REAL_PART_RAND_VALUE_2) -  (REAL_PART_RAND_VALUE_1 * IMAGINARY_PART_RAND_VALUE_2);
+        double newImaginaryPart = (IMAGINARY_PART_RAND_VALUE_1 * REAL_PART_RAND_VALUE_2) +  (REAL_PART_RAND_VALUE_1 * IMAGINARY_PART_RAND_VALUE_2);
         Complex complex1 = new Complex(REAL_PART_RAND_VALUE_1, IMAGINARY_PART_RAND_VALUE_1);
         Complex complex2 = new Complex(REAL_PART_RAND_VALUE_2, IMAGINARY_PART_RAND_VALUE_2);
 
-        complex1.sub(complex2);
+        complex1.multiply(complex2);
 
         assertThat(complex1.getImaginaryPart(), closeTo(newImaginaryPart, EPSILON));
     }
