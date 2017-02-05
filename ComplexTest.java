@@ -2,14 +2,13 @@ package CSIS202JunitTests;
 
 import com.foba.CSIS202.Complex;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.closeTo;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.*;
 
 //TODO: Add tests for large integers
 //TODO: Add tests for negatives (Irattional, large, small)
@@ -259,13 +258,72 @@ class ComplexTest {
         assertThat(complex1.getImaginaryPart(), closeTo(newImaginaryPart, EPSILON));
     }
 
+    @Test
+    void divideComplexNumbersCorrectRealPartValueRat()
+    {
+        double  a = REAL_PART_VALUE_1,
+                c = REAL_PART_VALUE_2,
+                b = IMAGINARY_PART_VALUE_1,
+                d = IMAGINARY_PART_VALUE_2;
 
+        double newRealPart = (((a*c) + (b*d)) / ((c * c) + (d * d)));
+        Complex complex1 = new Complex(REAL_PART_VALUE_1, IMAGINARY_PART_VALUE_1);
+        Complex complex2 = new Complex(REAL_PART_VALUE_2, IMAGINARY_PART_VALUE_2);
 
+        complex1.divide(complex2);
 
+        assertThat(complex1.getRealPart(), equalTo(newRealPart));
+    }
 
+    @Test
+    void divideComplexNumbersCorrectImaginaryPartValueRat()
+    {
+        double  a = REAL_PART_VALUE_1,
+                c = REAL_PART_VALUE_2,
+                b = IMAGINARY_PART_VALUE_1,
+                d = IMAGINARY_PART_VALUE_2;
 
+        double newImaginaryPart = ((b*c - a*d) / ((c*c) + (d*d)));
+        Complex complex1 = new Complex(REAL_PART_VALUE_1, IMAGINARY_PART_VALUE_1);
+        Complex complex2 = new Complex(REAL_PART_VALUE_2, IMAGINARY_PART_VALUE_2);
 
+        complex1.divide(complex2);
+        assertThat(complex1.getImaginaryPart(), equalTo(newImaginaryPart));
+    }
 
+    @Test
+    void divideComplexNumbersCorrectRealPartValueIrrat()
+    {
+        double  a = REAL_PART_RAND_VALUE_1,
+                c = REAL_PART_RAND_VALUE_2,
+                b = IMAGINARY_PART_RAND_VALUE_1,
+                d = IMAGINARY_PART_RAND_VALUE_2;
+
+        double newRealPart = (((a*c) + (b*d)) / ((c * c) + (d * d)));
+        Complex complex1 = new Complex(REAL_PART_RAND_VALUE_1, IMAGINARY_PART_RAND_VALUE_1);
+        Complex complex2 = new Complex(REAL_PART_RAND_VALUE_2, IMAGINARY_PART_RAND_VALUE_2);
+
+        complex1.divide(complex2);
+
+        assertThat(complex1.getRealPart(), closeTo(newRealPart, EPSILON));
+    }
+
+    @Test
+    void divideComplexNumbersCorrectImaginaryPartValueIrrat()
+    {
+        double  a = REAL_PART_RAND_VALUE_1,
+                c = REAL_PART_RAND_VALUE_2,
+                b = IMAGINARY_PART_RAND_VALUE_1,
+                d = IMAGINARY_PART_RAND_VALUE_2;
+
+        double newImaginaryPart = ((b*c - a*d) / ((c*c) + (d*d)));
+        Complex complex1 = new Complex(REAL_PART_RAND_VALUE_1, IMAGINARY_PART_RAND_VALUE_1);
+        Complex complex2 = new Complex(REAL_PART_RAND_VALUE_2, IMAGINARY_PART_RAND_VALUE_2);
+
+        complex1.divide(complex2);
+
+        assertThat(complex1.getImaginaryPart(), closeTo(newImaginaryPart, EPSILON));
+    }
 
 }
 
