@@ -1,6 +1,8 @@
 package CSIS202JunitTests;
 
 import com.foba.CSIS202.Complex;
+import org.hamcrest.Description;
+import org.hamcrest.TypeSafeMatcher;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -9,6 +11,7 @@ import java.util.Random;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 //TODO: Add tests for large integers
 //TODO: Add tests for negatives (Irattional, large, small)
@@ -325,8 +328,76 @@ class ComplexTest {
         assertThat(complex1.getImaginaryPart(), closeTo(newImaginaryPart, EPSILON));
     }
 
+    @Test
+    void toStringReturnsProperlyFormedStringRat()
+    {
+        String regexImaginaryNumPat = "([-+]?\\d+\\.?\\d*|[-+]?\\d*\\.?\\d+)\\s*\\+\\s*([-+]?\\d+\\.?\\d*|[-+]?\\d*\\.?\\d+)i";
+
+        Complex complex1 = new Complex(REAL_PART_VALUE_1, IMAGINARY_PART_VALUE_1);
+
+        assertThat(complex1.toString(), RegexMatcher.matchesRegex(regexImaginaryNumPat));
+    }
+
+    @Test
+    void toStringReturnsProperlyFormedStringIrrat()
+    {
+        String regexImaginaryNumPat = "([-+]?\\d+\\.?\\d*|[-+]?\\d*\\.?\\d+)\\s*\\+\\s*([-+]?\\d+\\.?\\d*|[-+]?\\d*\\.?\\d+)i";
+
+        Complex complex1 = new Complex(REAL_PART_RAND_VALUE_1, IMAGINARY_PART_RAND_VALUE_1);
+
+        assertThat(complex1.toString(), RegexMatcher.matchesRegex(regexImaginaryNumPat));
+    }
+
+    @Test
+    void equalsMethodFunctionsProperlyRat()
+    {
+        Complex complex1 = new Complex(REAL_PART_VALUE_1, IMAGINARY_PART_VALUE_1);
+        Complex complex2 = new Complex(REAL_PART_VALUE_1, IMAGINARY_PART_VALUE_1);
+        assertTrue(complex1.equals(complex2));
+    }
+
+    @Test
+    void equalsMethodFunctionsProperlyIrrat()
+    {
+        Complex complex1 = new Complex(REAL_PART_RAND_VALUE_1, IMAGINARY_PART_RAND_VALUE_1);
+        Complex complex2 = new Complex(REAL_PART_RAND_VALUE_1, IMAGINARY_PART_RAND_VALUE_1);
+        assertTrue(complex1.equals(complex2));
+    }
+
+
+
+
+
+
+
 }
 
+/**
+ * A Matcher class used to match regular expressions.
+ */
+ class RegexMatcher extends TypeSafeMatcher<String> {
+
+    private final String regex;
+
+    public RegexMatcher(final String regex) {
+        this.regex = regex;
+    }
+
+    @Override
+    public void describeTo(final Description description) {
+        description.appendText("matches regex=`" + regex + "`");
+    }
+
+    @Override
+    public boolean matchesSafely(final String string) {
+        return string.matches(regex);
+    }
+
+
+    public static RegexMatcher matchesRegex(final String regex) {
+        return new RegexMatcher(regex);
+    }
+}
 //-_realPart: double
 //-_imaginaryPart: double
 //+Complex()
