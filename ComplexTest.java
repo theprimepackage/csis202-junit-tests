@@ -1,10 +1,9 @@
 package CSIS202JunitTests;
 
-import com.foba.CSIS202.Complex;
+import com.foba.CSIS202.Programs2345.Complex;
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -366,7 +365,7 @@ class ComplexTest {
 
 
 
-
+    // minimum = a[i] < minimum ? a[i] : minimum;
 
 
 
