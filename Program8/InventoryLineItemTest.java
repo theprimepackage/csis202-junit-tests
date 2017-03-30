@@ -3,21 +3,32 @@ package CSIS202JunitTests.Program8;
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
 
-
-import CSIS202JunitTests.Program8.Lydia.Book;
-import CSIS202JunitTests.Program8.Lydia.InventoryLineItem;
-import CSIS202JunitTests.Program8.Lydia.Product;
-
+import com.foba.CSIS202.Program8.Book;
+import com.foba.CSIS202.Program8.FlashDrive;
+import com.foba.CSIS202.Program8.InventoryLineItem;
+import com.foba.CSIS202.Program8.Product;
+import org.junit.Before;
 import org.junit.Test;
 
+
+/*
+ * Daniel Rohwedder and Taylor Dawson's InventoryLineItem unit tests.
+ * Using JUnit4 and Hamcrest1.3
+ */
 public class InventoryLineItemTest
 {
 
 
-   /*
-    * Daniel Rohwedder's InventoryLineItem unit tests.
-    * Using JUnit4 and Hamcrest1.3
-    */
+
+   private FlashDrive flashDrive;
+   private InventoryLineItem inventoryLineItem;
+
+   @Before
+   public void setUp() {
+       flashDrive = new FlashDrive(" FD_001", "A flashdrive",
+       29.99, 2048);
+       inventoryLineItem = new InventoryLineItem(flashDrive, 30);
+   }
    
    @Test
    public void testInventoryLineItem()
@@ -417,5 +428,27 @@ public class InventoryLineItemTest
       assertThat("toString contains subtotal", i.toString(),
          containsString("1.25"));
    }
+
+   /*--------------------------------------------------------------------------
+    * adjustLineItemQty method, checks to makes sure that the quantity is indeed
+    * adjusted correctly after the method is ran.
+    *--------------------------------------------------------------------------
+    */
+   @Test
+   public void testAdjustLineItemQtyPos5(){
+       inventoryLineItem.adjustLineItemQty(5);
+       assertThat(inventoryLineItem.getLineItemQty(),is(equalTo(35)));
+   }
+    @Test
+    public void testAdjustLineItemQtyNeg5(){
+        inventoryLineItem.adjustLineItemQty(-5);
+        assertThat(inventoryLineItem.getLineItemQty(),is(equalTo(25)));
+    }
+    // Test that the line item quantity does not go below 0
+    @Test
+    public void testAdjustLineItemQtyNotLT0(){
+        inventoryLineItem.adjustLineItemQty(-40);
+        assertThat(inventoryLineItem.getLineItemQty(),is(equalTo(0)));
+    }
 
 }
