@@ -1,0 +1,3 @@
+CD_001,Josh Turner,9.99,Your Man,76
+BOOK_001,Children Fiction,3.99,The Cat In The Hat,Dr. Seuss,23
+FD_001,SanDisk Ultra,12.99,8,40
