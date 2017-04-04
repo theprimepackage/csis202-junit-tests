@@ -1,4 +1,10 @@
+package CSIS202JunitTests.Program9Tests;
+
 import static org.junit.Assert.*;
+
+import com.foba.CSIS202.Program8.Inventory;
+import com.foba.CSIS202.Program8.InventoryLineItem;
+import com.foba.CSIS202.Program8.Product;
 import org.junit.Before;
 import static org.hamcrest.Matchers.*;
 import org.junit.Test;
@@ -100,6 +106,7 @@ public class InventoryTest
       testInventory.restock(newItem, qtyOfNewItem);
       assertThat(testInventory.getQtyInStock(newItem.getProductID()), is(equalTo(qtyOfNewItem)));
    }
+
    @Test
    public void testRestockAddsToCurrentStock()
    {
@@ -107,6 +114,16 @@ public class InventoryTest
       testInventory.restock(additionItem, 1);
       testInventory.restock(additionItem, 20);
       assertThat(testInventory.getQtyInStock(additionItem.getProductID()), is(equalTo(21)));
+   }
+
+   @Test
+   public void testRestockIgnoresNegQty()
+   {
+       testInventory.restock(new Product("NEG_001", "Not valid", 0.00), -1);
+       int greenWidgetQty = testInventory.getQtyInStock(GREEN_WIDGET_ID);
+       testInventory.restock(greenWidget,-20);
+       assertNull(testInventory.findInventoryItem("NEG_001"));
+       assertThat(testInventory.getQtyInStock(GREEN_WIDGET_ID), is(equalTo(greenWidgetQty)));
    }
 
 
@@ -130,7 +147,7 @@ public class InventoryTest
    public void testInventoryListing()
    {
       InventoryLineItem[] widgets = new InventoryLineItem[3];
-      widgets = testInventory.inventoryListing("WID");
+      widgets = testInventory.getInventoryListing("WID");
       assertThat(widgets, arrayContainingInAnyOrder(
          testInventory.findInventoryItem(GREEN_WIDGET_ID), 
          testInventory.findInventoryItem(RED_WIDGET_ID), 
@@ -140,7 +157,7 @@ public class InventoryTest
    @Test
    public void testInventoryListingBadItem()
    {
-      InventoryLineItem[] shouldBeNull = testInventory.inventoryListing("HELLO");
+      InventoryLineItem[] shouldBeNull = testInventory.getInventoryListing("HELLO");
       assertThat(shouldBeNull, is(emptyArray()));
    }
 
