@@ -1,0 +1,4 @@
+CD_001, 24
+BOOK_531,Children Fiction,3.99,The Cat In The Hats,Dr. Seusses, 3
+FD_001, 32
+BOOK_97234, Fiction, 5.99, The Great Divorce, C.S. Lewises, 1
